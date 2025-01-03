@@ -11,17 +11,17 @@ function addTask(
 	completed = false,
 	timestamp = new Date().toLocaleString()
 ) {
-	const li = document.createElement("li");
-	li.classList.add("task-item");
-	li.textContent = `${text} (added on ${timestamp})`;
+	const task = document.createElement("li");
+	task.classList.add("task-item");
+	task.textContent = `${text} (added on ${timestamp})`;
 
 	if (completed) {
-		li.classList.add("completed");
+		task.classList.add("completed");
 	}
 
 	// Toggle completed status on click
-	li.addEventListener("click", () => {
-		li.classList.toggle("completed");
+	task.addEventListener("click", () => {
+		task.classList.toggle("completed");
 		saveTasks();
 	});
 
@@ -30,12 +30,12 @@ function addTask(
 	deleteBtn.textContent = "Delete";
 	deleteBtn.classList.add("delete-btn");
 	deleteBtn.addEventListener("click", () => {
-		li.remove();
+		task.remove();
 		saveTasks();
 	});
 
-	li.appendChild(deleteBtn);
-	list.appendChild(li);
+	task.appendChild(deleteBtn);
+	list.appendChild(task);
 
 	saveTasks();
 }

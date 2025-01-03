@@ -55,7 +55,7 @@ button:hover {
 }
 
 #todo-list {
-  list-style: disc; 
+  list-style: none; 
   margin-left: 20px; 
   padding: 0;
 }
